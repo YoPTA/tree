@@ -18,6 +18,7 @@ div.nav li a {
 }
 div.nav li ul {
     display: none;	/*скрываем вложенные пункты*/
+    margin-right: 20px;
 }
 div.nav { /*задаём высоту и ширину меню*/
     background: #B3B3FF;
@@ -34,6 +35,8 @@ div.nav li:hover {
 div.nav li:hover > ul {
     border-top: 1px solid white;
     display: block;
+    animation-name: border_shift;
+    animation-duration: 0.1s;
     position: absolute;
     top: 30px; /*первый уровень меню раскрывается вниз*/
     left: 0;
@@ -50,8 +53,19 @@ div.nav li:hover ul li ul{
     left: 150px; /*второй и последующие уровни расскрываются вправо*/
 }
 
-div.nav li.section a {
+div.nav li.separator a {
     border-bottom: 2px solid red;
     font-size: 0;
     padding: 0;
+}
+
+@keyframes border_shift {
+    0%{
+        opacity: 0.7;
+        border-left: 3px solid rgba(0, 0, 0, 0);
+    }
+    100%{
+        opacity: 1;
+        border-left: 1px solid rgba(0, 0, 0, 0);
+    }
 }

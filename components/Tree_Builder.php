@@ -24,7 +24,7 @@ class Tree_Builder
                         $tr .='<li';
                         if ($tree['type'] == 1)
                         {
-                            $tr .= ' class="section" ';
+                            $tr .= ' class="separator" ';
                         }
                         $tr .='><a href="#">'.$tree['name'].'</a>';
                         $tr .= self::buildTree($trees, $tree['id']);
